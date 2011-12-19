@@ -6,6 +6,6 @@ import py2exe, sys, os
 #	console=['excelConverter.py'],
 #	zipfile=None,
 #)
-setup(console = [{"script":"mapManyRows.py", "icon_resources":[(1, "c:\python27\DLLs\py.ico")]}],
+setup(console = [{"script":"uhcCodeSplit.py", "icon_resources":[(1, "c:\python27\DLLs\py.ico")]}],
 	  zipfile = None,
 	  options = {"py2exe":{"compressed": 1, "optimize": 1, "ascii": 1, "bundle_files": 1}})
