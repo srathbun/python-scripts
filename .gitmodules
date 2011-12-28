@@ -1,0 +1,6 @@
+[submodule "applib"]
+	path = applib
+	url = https://github.com/ActiveState/applib/tree/master/applib
+[submodule "pyConstruct"]
+	path = pyConstruct
+	url = https://github.com/MostAwesomeDude/construct
