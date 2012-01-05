@@ -155,3 +155,46 @@ def random_combination_with_replacement(iterable, r):
 	indices = sorted(random.randrange(n) for i in xrange(r))
 	return tuple(pool[i] for i in indices)
 
+def sieve():
+	"""Sieve of Eratosthenes, yield each prime in sequence."""
+	yield 2
+	D = {}
+	q = 3
+	while True:
+		p = D.pop(q, 0)
+		if p:
+			x = q + p
+			while x in D: x += p
+			D[x] = p
+		else:
+			yield q
+			D[q*q] = 2*q
+		q += 2
+
+def running_sum(it, k):
+	"""Yield sums of the latest k items from it"""
+	n = it.next
+	d = collections.deque(n() for i in range(k))
+	s = sum(d)
+	while True:
+		yield s
+		s -= d.popleft()
+		d.append(n())
+		s += d[-1]
+
+def inters(*its, **k):
+	"""Yield items that are in ALL of sorted iterators *its"""
+	heap = []
+	for it in its:
+		try: heap.append((it.next(), it.next))
+		except StopIteration: return
+	heapq.heapify(heap)
+	mx = max(h[0] for h in heap)
+	while True:
+		v, n = heapq.heappop(heap)
+		if v==mx: yield v
+		try: v = n()
+		except StopIteration: return
+		if v>mx: mx = v
+		heapq.heappush(heap, (v, n))
+
