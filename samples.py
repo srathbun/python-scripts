@@ -1,3 +1,10 @@
+# python design patterns book
+# http://dpip.testingperspective.com/
+
+# Python Lex-Yacc
+# http://www.dabeaz.com/ply/
+
+
 def combineDicts(dictionary1, dictionary2):
 	output = {}
 	for item, value in dictionary1.iteritems():

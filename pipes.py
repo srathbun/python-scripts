@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# http://eli.thegreenplace.net/2011/12/27/python-threads-communication-and-stopping/
 import os, time
 import threading, Queue
 
