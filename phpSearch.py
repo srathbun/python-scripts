@@ -10,6 +10,7 @@ import re, argparse
 from glob import glob
 def main(regex, infiles):
 	theRegex = re.compile(regex)
+	currFunction = ''
 
 	for globFile in infiles:
 		for f in glob(globFile):
