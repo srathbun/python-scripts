@@ -12,7 +12,7 @@ def gen_open(filenames):
         elif name.endswith(".bz2"):
             yield bz2.BZ2File(name)
         else:
-            yield open(name)
+            yield open(name, 'rb')
 
 # Example use
 
