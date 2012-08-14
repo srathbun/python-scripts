@@ -17,7 +17,7 @@ from itertools import izip_longest, count
 def getPeople(reader, peopleFields):
 	"""Find all unique people in the csv file, based on the people fields given."""
 	people = defaultdict(list)
-	for row, pos in (reader, count(1)):
+	for row, pos in zip(reader, count(1)):
 		try:
 			personlist = filter(lambda x: x != None, [row[f] for f in reader.fieldnames if f in peopleFields])
 			person = '|'.join(personlist)
